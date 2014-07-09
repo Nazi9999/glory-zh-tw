@@ -50,3 +50,5 @@ group :development do
 
   gem 'venus', '~> 0.8.6'
 end
+gem 'paper_trail', '~> 2.7.1'
+gem 'differ', '~> 0.1.2'
