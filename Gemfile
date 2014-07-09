@@ -70,3 +70,4 @@ end
 
 gem 'kaminari'
 gem 'whenever'
+gem 'devise', '~> 3.2.4'
