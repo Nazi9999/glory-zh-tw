@@ -21,6 +21,8 @@
 //= require jquery.ui.slider
 
 //= require jquery.timepicker
+
+//= require chosen-jquery
 //= require_self
 
 $(document).ready(function() {
@@ -38,4 +40,8 @@ $(document).ready(function() {
       stepMinute: 10
     });
   });
+});
+
+$(document).ready(function() {
+  $('select.chosen').chosen();
 });
