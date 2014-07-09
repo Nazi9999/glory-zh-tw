@@ -20,3 +20,4 @@ config/database.yml
 config/setting.yml
 
 /config/y
+.DS_Store

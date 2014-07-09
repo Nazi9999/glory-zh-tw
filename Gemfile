@@ -63,3 +63,10 @@ gem 'carrierwave-meta', '~> 0.0.4'
 gem 'fog'
 gem 'jquery-ui-rails', '~> 4.0.3'
 gem 'chosen-rails', '~> 0.9.15'
+group :assets do
+  gem 'therubyracer', :platforms => :ruby
+
+end
+
+gem 'kaminari'
+gem 'whenever'
