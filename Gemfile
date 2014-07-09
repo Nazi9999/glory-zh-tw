@@ -52,3 +52,6 @@ group :development do
 end
 gem 'paper_trail', '~> 3.0.3'
 gem 'differ', '~> 0.1.2'
+gem 'simple_form', '~> 3.0.2'
+gem 'nested_form'
+gem 'anjlab-bootstrap-rails', '>= 2.3', :require => 'bootstrap-rails'
