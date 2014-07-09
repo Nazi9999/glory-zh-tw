@@ -2,12 +2,12 @@
 CarrierWave.configure do |config|
   config.fog_credentials = {
     :provider               => 'AWS',
-    :aws_access_key_id      => y.aws_access_key_id,
-    :aws_secret_access_key  => y.aws_secret_access_key,
-    :region                 => y.aws_region_carrierwave
+    :aws_access_key_id      => Setting.aws_access_key_id,
+    :aws_secret_access_key  => Setting.aws_secret_access_key,
+    :region                 => Setting.aws_region_carrierwave
   }
-  config.fog_directory  = y.aws_bucket_carrierwave
-  config.fog_host       = y.aws_host_carrierwave
+  config.fog_directory  = Setting.aws_bucket_carrierwave
+  config.asset_host       = Setting.aws_host_carrierwave
   config.fog_public     = true                                # optional, defaults to true
 end
 

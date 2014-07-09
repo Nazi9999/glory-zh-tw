@@ -14,3 +14,28 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+//= require jquery.ui.datepicker
+
+//= require jquery.ui.slider
+
+//= require jquery.timepicker
+//= require_self
+
+$(document).ready(function() {
+  $('.datepicker').datepicker({
+    dateFormat: "yy-mm-dd"
+  });
+});
+
+$(document).ready(function() {
+  $(".datetimepicker").each(function(){
+    $(this).datetimepicker({
+      dateFormat: "yy-mm-dd",
+      hourGrid: 4,
+      minuteGrid: 10,
+      stepMinute: 10
+    });
+  });
+});
