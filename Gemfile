@@ -44,6 +44,8 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 group :development do
+  gem 'better_errors'
+
   gem 'meta_request'
 
   gem 'venus', '~> 0.8.6'
