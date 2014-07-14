@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140714154502) do
+ActiveRecord::Schema.define(version: 20140714161532) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20140714154502) do
     t.string   "name"
     t.text     "content"
     t.integer  "creator_id"
+    t.text     "description"
     t.string   "file"
     t.datetime "created_at"
     t.datetime "updated_at"
