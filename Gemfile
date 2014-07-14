@@ -78,3 +78,4 @@ group :development, :test do
   gem "factory_girl_rails"
   gem 'turn', '~> 0.8.3', :require => false
 end
+gem "connection_ninja", "~> 0.4.1"

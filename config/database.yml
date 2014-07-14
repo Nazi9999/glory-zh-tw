@@ -15,3 +15,17 @@ test: &test
 
 production:
   <<: *default
+
+traditional_chinese_old:
+  development: &old_default
+    adapter: mysql2
+    encoding: big5
+    collation: big5_chinese_ci
+    database: "chinese"
+    host: localhost
+    username: "root"
+    password: '5200418'
+  test:
+    <<: *old_default
+  production:
+    <<: *old_default

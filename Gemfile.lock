@@ -60,6 +60,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    connection_ninja (0.4.1)
     devise (3.2.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -240,6 +241,7 @@ DEPENDENCIES
   carrierwave-meta (~> 0.0.4)
   chosen-rails (~> 0.9.15)
   coffee-rails (~> 4.0.0)
+  connection_ninja (~> 0.4.1)
   devise (~> 3.2.4)
   differ (~> 0.1.2)
   factory_girl_rails
