@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140714161532) do
+ActiveRecord::Schema.define(version: 20140715154525) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -31,8 +31,40 @@ ActiveRecord::Schema.define(version: 20140714161532) do
     t.datetime "updated_at"
   end
 
+  create_table "dictionaries", force: true do |t|
+    t.string   "word"
+    t.integer  "six_id"
+    t.integer  "six_cat_id"
+    t.string   "component"
+    t.text     "meaning"
+    t.string   "term"
+    t.string   "dicflash"
+    t.string   "flash"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "locations", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sixbook_categorts", force: true do |t|
+    t.string   "category_name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sixbooks", force: true do |t|
+    t.string   "word"
+    t.integer  "dic_id"
+    t.integer  "six_cat_id"
+    t.string   "meaning"
+    t.string   "image"
+    t.string   "avatar"
+    t.string   "file"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
