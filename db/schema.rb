@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140715154525) do
+ActiveRecord::Schema.define(version: 20140715160118) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20140715154525) do
     t.datetime "updated_at"
   end
 
-  create_table "sixbook_categorts", force: true do |t|
+  create_table "sixbook_categorys", force: true do |t|
     t.string   "category_name"
     t.text     "description"
     t.datetime "created_at"
