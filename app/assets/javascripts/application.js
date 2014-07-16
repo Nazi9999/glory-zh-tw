@@ -20,6 +20,10 @@
 //= require jquery.timepicker
 
 //= require chosen-jquery
+
+//= require twitter/bootstrap
+//= require unicorn
+
 //= require_self
 
 $(document).ready(function() {
