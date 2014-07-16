@@ -64,10 +64,7 @@ gem 'carrierwave-meta', '~> 0.0.4'
 gem 'fog'
 gem 'jquery-ui-rails', '~> 4.0.3'
 gem 'chosen-rails', '~> 0.9.15'
-group :assets do
-  gem 'therubyracer', :platforms => :ruby
-
-end
+gem 'therubyracer', :platforms => :ruby
 
 gem 'kaminari'
 gem 'whenever'
@@ -80,3 +77,5 @@ group :development, :test do
   gem 'turn', '~> 0.8.3', :require => false
 end
 gem "connection_ninja", "~> 0.4.1"
+gem "less-rails"
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
