@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140715172708) do
+ActiveRecord::Schema.define(version: 20140716144037) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -60,6 +60,26 @@ ActiveRecord::Schema.define(version: 20140715172708) do
 
   create_table "locations", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", force: true do |t|
+    t.integer  "user_id"
+    t.text     "content"
+    t.integer  "like_count"
+    t.integer  "dislike_count"
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "replies", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.string   "content"
+    t.integer  "like_count"
+    t.integer  "dislike_count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
