@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140716144037) do
+ActiveRecord::Schema.define(version: 20140716150621) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -84,6 +84,14 @@ ActiveRecord::Schema.define(version: 20140716144037) do
     t.datetime "updated_at"
   end
 
+  create_table "roles", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.boolean  "disabled",    default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sixbook_categorys", force: true do |t|
     t.string   "category_name"
     t.text     "description"
@@ -99,6 +107,13 @@ ActiveRecord::Schema.define(version: 20140716144037) do
     t.string   "image"
     t.string   "avatar"
     t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_roles", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
