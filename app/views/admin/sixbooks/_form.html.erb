@@ -1,0 +1,12 @@
+<div class="form-inputs">
+  <%= f.input :word, :label =>"字名", :as => :string, :input_html => { :maxlength => 12 } %>
+  <%= f.input :six_cat_id, :label => "六書分類" , :as => :select, :collection => collection_for_six_category %>
+  <%= f.input :dic_id, :label => "字典" , :as => :select, :collection => collection_for_dictionary_word %>
+  <%= f.input :meaning , :input_html => { :maxlength => 400 }, :label => "解釋", :as => :text %>
+  <%= f.input :file, :label => "六書動畫", :as => :file %>
+</div>
+
+<div class="form-actions" style="text-align:center">
+  <%= f.submit :value => "送出", :class => "btn btn-primary" %>
+  <%= link_to "取消", admin_sixbooks_path, :class => "btn" %>
+</div>
