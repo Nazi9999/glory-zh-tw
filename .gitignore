@@ -18,6 +18,6 @@
 /public/traditional_chinese_website
 config/database.yml
 config/setting.yml
-
+.rvmrc
 /config/y
 .DS_Store
