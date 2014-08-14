@@ -6,7 +6,7 @@ class Admin::SixbooksController < Admin::BaseController
 
   def index
     add_crumb "六書列表", "#"
-    @sixbooks = Sixbook.page(params[:page]).per(15)
+    @sixbooks = Sixbook.newest.page(params[:page]).per(15)
   end
 
   def new 
