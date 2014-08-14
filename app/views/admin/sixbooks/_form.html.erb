@@ -13,14 +13,26 @@
   <%= f.input :six_cat_id, :label => "六書分類" , :as => :select, :collection => collection_for_six_category %>
   <%= f.input :dic_id, :label => "字典" , :as => :select, :collection => collection_for_dictionary_word %>
   <%= f.input :meaning , :input_html => { :maxlength => 400 }, :label => "解釋", :as => :text %>
-  <%= f.input :image, :label => "六書圖片", :as => :file %>
-  <% if @sixbook.image? %>
-    <%= f.input :remove_image, :label => "刪除圖片", :as => :boolean %>
-  <% end %>
-  <%= f.input :file, :label => "六書動畫", :as => :file %>
-  <% if @sixbook.file? %>
-    <%= f.input :remove_file, :label => "刪除動畫", :as => :boolean %>
-  <% end %>
+  <div class="control-group">
+    <div class="span5">
+      <%= f.input :image, :label => "六書圖片", :as => :file %>
+    </div>
+    <% if @sixbook.image? %>
+      <div class="span5">
+        <%= f.input :remove_image, :label => "刪除圖片", :as => :boolean %>  
+      </div>
+    <% end %>
+  </div>
+  <div class="control-group">
+    <div class="span5">
+      <%= f.input :file, :label => "六書動畫", :as => :file %>
+    </div>
+    <% if @sixbook.file? %>
+      <div class="span5">
+        <%= f.input :remove_file, :label => "刪除動畫", :as => :boolean %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <div class="form-actions" style="text-align:center">
