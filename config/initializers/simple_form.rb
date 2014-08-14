@@ -142,4 +142,17 @@ SimpleForm.setup do |config|
 
   # Default class for inputs
   # config.input_class = nil
+
+  config.label_class = "control-label"
+  config.form_class = "form-horizontal"
+  config.wrappers :admin, :tag => :div, :class => 'control-group' do |b|
+    b.use :placeholder
+    b.use :label, :wrap_with => { :class => 'control-label', :tag => false }
+    b.wrapper :tag => :div, :class => 'controls' do |ba|
+      ba.use :input
+      ba.use :hint, :wrap_with => { :tag => :span, :class => 'help-block' }
+      ba.use :error, :wrap_with => { :tag => :span, :class => 'help-inline' }
+    end
+  end
+
 end

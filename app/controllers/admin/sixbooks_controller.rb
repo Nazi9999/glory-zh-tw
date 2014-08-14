@@ -1,5 +1,5 @@
 class Admin::SixbooksController < Admin::BaseController
-  before_filter :find_sixbook, :except => :index
+  before_filter :find_sixbook, :except => [ :index, :new ]
   before_filter :except => :index do
     add_crumb "六書列表 ", admin_sixbooks_path
   end
