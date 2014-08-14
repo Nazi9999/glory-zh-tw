@@ -13,7 +13,7 @@ class PermittedParams < Struct.new(:params, :user)
   end
 
   def sixbook_attrs
-   [:word, :dic_id, :six_cat_id, :meaning, :file]
+   [:word, :dic_id, :six_cat_id, :meaning, :file, :image]
   end
 
 end

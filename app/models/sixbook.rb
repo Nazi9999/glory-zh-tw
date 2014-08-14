@@ -4,4 +4,5 @@ class Sixbook < ActiveRecord::Base
   delegate :category_name, :to => :sixbook_category, :allow_nil => true
 
   mount_uploader :file, SixbookFileUploader
+  mount_uploader :image, SixbookImageUploader
 end

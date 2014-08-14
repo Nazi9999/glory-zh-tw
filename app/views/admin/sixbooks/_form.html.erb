@@ -1,8 +1,19 @@
 <div class="form-inputs">
+  <% if @sixbook.image? %>
+    <%= image_tag @sixbook.image, size: '120x120' %>
+  <% else %>
+    <%= image_tag @sixbook.image.default_url, size: '120x120' %>
+  <% end %>
+  <% if @sixbook.file? %>
+    <%= image_tag @sixbook.file, size: '120x120' %>
+  <% else %>
+    <%= image_tag @sixbook.file.default_url, size: '120x120' %>
+  <% end %>
   <%= f.input :word, :label =>"字名", :as => :string, :input_html => { :maxlength => 12 } %>
   <%= f.input :six_cat_id, :label => "六書分類" , :as => :select, :collection => collection_for_six_category %>
   <%= f.input :dic_id, :label => "字典" , :as => :select, :collection => collection_for_dictionary_word %>
   <%= f.input :meaning , :input_html => { :maxlength => 400 }, :label => "解釋", :as => :text %>
+  <%= f.input :image, :label => "六書圖片", :as => :file %>
   <%= f.input :file, :label => "六書動畫", :as => :file %>
 </div>
 
