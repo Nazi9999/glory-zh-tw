@@ -5,14 +5,17 @@
       <span class="text">Setting</span>
     <% end %>
   </li>
-  <li class="btn btn-inverse">
-    <%= link_to(destroy_user_session_path, :method => :delete) do %>
-      <i class="icon icon-share-alt"></i>
-      <span class="text">Logout</span>
-    <% end %>
-  </li>
-  <li class="btn btn-inverse">
-    <%= link_to "Login", new_user_session_path %>
-  </li>
+  <% if user_signed_in?%>
+    <li class="btn btn-inverse">
+      <%= link_to(destroy_user_session_path, :method => :delete) do %>
+        <i class="icon icon-share-alt"></i>
+        <span class="text">Logout</span>
+      <% end %>
+    </li>
+  <% elsif !user_signed_in?%>
+    <li class="btn btn-inverse">
+      <%= link_to "Login", new_user_session_path %>
+    </li>
+  <% end %>
 </ul>
 
