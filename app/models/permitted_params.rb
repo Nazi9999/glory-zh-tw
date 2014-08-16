@@ -20,4 +20,8 @@ class PermittedParams < Struct.new(:params, :user)
     params.require(:sixbook_category).permit([:description])
   end
 
+  def location
+    params.require(:location).permit([:name])
+  end
+
 end
