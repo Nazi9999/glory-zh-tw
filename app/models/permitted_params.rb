@@ -16,4 +16,8 @@ class PermittedParams < Struct.new(:params, :user)
    [:word, :dic_id, :six_cat_id, :meaning, :file, :image]
   end
 
+  def sixbook_category
+    params.require(:sixbook_category).permit([:description])
+  end
+
 end

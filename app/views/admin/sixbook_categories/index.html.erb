@@ -1,0 +1,28 @@
+<div class="widget-box">
+  <div class="widget-content nopadding">
+    <div class="dataTables_wrapper">
+      <table class="table table-hover table-bordered with-check">
+          <thead>
+            <tr>
+              <th>編號</th>
+              <th>名稱</th>
+              <th>解釋</th>
+              <th>操作</th>
+            </tr>
+          </thead>  
+          <tbody>
+            <% @sixbook_categories.each do |sixbook_category| %>
+              <tr rowspan="1">
+                <td><%= sixbook_category.id %></td>
+                <td><%= sixbook_category.category_name %></td>
+                <td><%= sixbook_category.description %></td>
+                <td>
+                  <%= link_to "編輯", edit_admin_sixbook_category_path(sixbook_category), :class => "btn btn-mini" %>
+                </td>
+              </tr>
+            <% end %>   
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>   

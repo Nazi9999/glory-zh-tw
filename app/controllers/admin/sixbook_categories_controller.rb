@@ -6,7 +6,7 @@ class Admin::SixbookCategoriesController < Admin::BaseController
 
   def index
     add_crumb "六書編輯列表", "#"
-    @find_sixbook_categories = SixbookCategory.all
+    @sixbook_categories = SixbookCategory.all
   end
 
   def edit
