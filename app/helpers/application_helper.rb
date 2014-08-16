@@ -7,10 +7,8 @@ module ApplicationHelper
     Dictionary.all.map{ |d| [d.word, d.id] }
   end
 
-  def render_sidebar_menu
-    # render_list do|li|
-    #   li << link_to(admin_sixbooks_path){ render_icon(:star) + content_tag(:span,"六書列表")}
-    # end  
+  def collection_for_loaction_name_with_id
+    Location.all.map{ |l| [l.name, l.id] }
   end
 
   def render_icon(name)
