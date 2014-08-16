@@ -24,4 +24,12 @@ class PermittedParams < Struct.new(:params, :user)
     params.require(:location).permit([:name])
   end
 
+  def artist
+    params.require(:artist).permit(*artist_attrs)
+  end
+
+  def artist_attrs
+    [:name, :location_id, :description]
+  end
+
 end
