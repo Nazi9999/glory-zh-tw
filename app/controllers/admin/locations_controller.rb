@@ -1,12 +1,12 @@
 class Admin::LocationsController < Admin::BaseController
-  before_filter :find_location, except: [ :index, :new]
-  before_filter :except => :index do
+  before_filter :find_location, except: [ :index, :new ]
+  before_filter :except => [:index] do
     add_crumb "地點列表", admin_locations_path
   end
 
   def index
     add_crumb "地點列表", "#"
-    @locations = Location.page(params[:page]).per(15)
+    @locations = Location.newest.page(params[:page]).per(15)
   end
 
   def new
@@ -34,8 +34,8 @@ class Admin::LocationsController < Admin::BaseController
     end
   end
 
-  def destory
-    if @location.destory
+  def destroy
+    if @location.destroy
       redirect_to admin_locations_path, flash: { success: "刪除#{@location.name}成功！" }
     else
       redirect_to admin_locations_path, flash: { error: @location.errors.full_messages }
@@ -45,6 +45,6 @@ class Admin::LocationsController < Admin::BaseController
   private
 
   def find_location
-    @location = params[:id] ? Location.find params[:id] : Location.new permitted_params.location
+    @location = params[:id] ? Location.find(params[:id]) : Location.new(permitted_params.location)
   end
 end
