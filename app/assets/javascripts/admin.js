@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require jquery.ui.datepicker
 
 //= require jquery.ui.slider
@@ -30,9 +29,7 @@ $(document).ready(function() {
   $('.datepicker').datepicker({
     dateFormat: "yy-mm-dd"
   });
-});
 
-$(document).ready(function() {
   $(".datetimepicker").each(function(){
     $(this).datetimepicker({
       dateFormat: "yy-mm-dd",
@@ -41,8 +38,6 @@ $(document).ready(function() {
       stepMinute: 10
     });
   });
-});
 
-$(document).ready(function() {
   $('select.chosen').chosen();
 });
