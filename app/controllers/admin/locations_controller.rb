@@ -23,11 +23,11 @@ class Admin::LocationsController < Admin::BaseController
   end
 
   def edit
-    add_crumb "編輯地點 #{@location.name}"
+    add_crumb "編輯地點 #{@location.name}", "#"
   end
 
   def update
-    if @location.update_attributes
+    if @location.update_attributes(permitted_params.location)
       redirect_to admin_locations_path, flash: { success: "編輯地點#{@location.name}成功！"}
     else
       render :edit, flash: { error: @location.errors.full_messages } 

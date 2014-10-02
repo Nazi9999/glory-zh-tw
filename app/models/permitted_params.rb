@@ -32,4 +32,12 @@ class PermittedParams < Struct.new(:params, :user)
     [:name, :location_id, :description]
   end
 
+  def dictionary
+    params.require(:dictionary).permit(*dictionary_attrs)
+  end
+
+  def dictionary_attrs
+    [:word, :six_id, :six_cat_id, :component, :meaning, :term, :dicflash, :flash]
+  end
+
 end

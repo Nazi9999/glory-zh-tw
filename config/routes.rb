@@ -6,5 +6,6 @@ TraditionalChineseWebsite::Application.routes.draw do
     resources :locations, :except => :show
     resources :sixbooks, :except => :show
     resources :sixbook_categories, :only => [:index, :edit, :update]
+    resources :dictionaries, :except => :show
   end
 end
