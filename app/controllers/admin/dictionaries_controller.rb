@@ -1,11 +1,11 @@
 class Admin::DictionariesController < Admin::BaseController
-  before_filter :find_dictionary
+  before_filter :find_dictionary, except: [:index, :new]
   before_filter :except => [:index] do
     add_crumb "地點列表", admin_dictionaries_path
   end
 
   def index
-    @dicionaries = Dictionary.newest.page(params[:page]).per(15)
+    @dictionaries = Dictionary.newest.page(params[:page]).per(15)
   end
 
   def new
@@ -13,35 +13,36 @@ class Admin::DictionariesController < Admin::BaseController
   end
 
   def create
-    if @dicionary.save
+    if @dictionary.save
       redirect_to admin_dictionaries_path, flash: { success: "新增字典字成功！" }
     else
-      render :new, flash: { error: @dicionary.errors.full_messages }
+      render :new, flash: { error: @dictionary.errors.full_messages }
     end
   end
 
   def edit
-    add_crumb "編輯字典字 #{@dicionary.word}", "#"
+    add_crumb "編輯字典字 #{@dictionary.word}", "#"
   end
 
   def update
-    if @dicionary.update_attributes(permitted_params.dicionary)
-      redirect_to admin_dictionaries_path, flash: { success: "編輯字典字 #{@dicionary.word}成功！" }
+    if @dictionary.update_attributes(permitted_params.dictionary)
+      redirect_to admin_dictionaries_path, flash: { success: "編輯字典字 #{@dictionary.word}成功！" }
     else
-      render :edit, flash: { error: @dicionary.errors.full_messages }
+      render :edit, flash: { error: @dictionary.errors.full_messages }
     end
   end
 
   def destroy
-    if @dicionary.destroy
-      redirect_to admin_dictionaries_path, flash: { success: "刪除字典字 #{@dicionary.word}成功!"}
+    if @dictionary.destroy
+      redirect_to admin_dictionaries_path, flash: { success: "刪除字典字 #{@dictionary.word}成功!"}
     else
-      redirect_to admin_dictionaries_path, flash: { error: }
+      redirect_to admin_dictionaries_path, flash: { error: @dictionary.errors.full_messages }
+    end
   end
 
   protected
 
   def find_dictionary
-    @dicionary = params[:id] ? Dictionary.find(params[:id]) : Dictionary.create(permitted_params.dictionary)
+    @dictionary = params[:id] ? Dictionary.find(params[:id]) : Dictionary.create(permitted_params.dictionary)
   end
 end

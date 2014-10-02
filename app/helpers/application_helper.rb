@@ -11,6 +11,10 @@ module ApplicationHelper
     Location.all.map{ |l| [l.name, l.id] }
   end
 
+  def collection_for_six_words
+    Sixbook.all.map{ |s| [s.word, s.id] }
+  end
+
   def render_icon(name)
     content_tag(:i, " ", :class => "icon icon-#{name}")
   end

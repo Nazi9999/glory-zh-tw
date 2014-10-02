@@ -37,7 +37,7 @@ class PermittedParams < Struct.new(:params, :user)
   end
 
   def dictionary_attrs
-    [:word, :six_id, :six_cat_id, :component, :meaning, :term, :dicflash, :flash]
+    [:word, :six_id, :six_cat_id, :component, :meaning, :term, :flash]
   end
 
 end
