@@ -1,0 +1,7 @@
+<div class="widget-box">
+  <div class="widget-content nopadding">
+    <%= simple_form_for @dictionary, :url => admin_dictionaries_path, :method => :post, :wrapper => :admin do |d| %>
+      <%= render :partial => 'form', :locals => { :f => d } %>
+    <% end %>
+  </div>
+</div>

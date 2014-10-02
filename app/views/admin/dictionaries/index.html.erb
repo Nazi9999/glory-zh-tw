@@ -1,0 +1,43 @@
+<% content_for :bts do %>
+  <%= link_to "新增字典字", new_admin_dictionary_path, :class => 'btn' %>
+<% end %>
+
+<div class="widget-box">
+  <div class="widget-content nopadding">
+    <div class="dataTables_wrapper">
+      <table class="table table-hover table-bordered with-check">
+          <thead>
+            <tr>
+              <th>編號</th>
+              <th>字</th>
+              <th>六書字</th>
+              <th>六書分類</th>
+              <th>部首</th>
+              <th>字義</th>
+              <th>造詞例句</th>
+              <th>操作</th>
+            </tr>
+          </thead>  
+          <tbody>
+            <% @dictionaries.each do |dictionary| %>
+              <tr rowspan="1">
+                <td><%= dictionary.id %></td>
+                <td><%= dictionary.word %></td>
+                <td><%= dictionary.sixbook_word %></td>
+                <td><%= dictionary.category_name %></td>
+                <td><%= dictionary.component %></td>
+                <td><%= dictionary.meaning %></td>
+                <td><%= dictionary.term %></td>
+                <td>
+                  <%= link_to "編輯", edit_admin_dictionary_path(dictionary), :class => "btn btn-mini" %>
+                  <%= link_to "刪除", admin_dictionary_path(dictionary), :class => "btn btn-mini btn-danger", :method => :delete, :confirm => "請確認！！" %>
+                </td>
+              </tr>
+            <% end %>   
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>   
+
+<%= paginate @dictionaries %>
