@@ -6,4 +6,5 @@ class Dictionary < ActiveRecord::Base
   validates_presence_of :word, :six_cat_id
   delegate :category_name, to: :sixbook_category, prefix: false, allow_nil: true
   delegate :word, to: :sixbook, prefix: true, allow_nil: true
+  mount_uploader :flash, DictionaryWordUploader
 end

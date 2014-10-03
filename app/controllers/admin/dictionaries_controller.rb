@@ -10,6 +10,8 @@ class Admin::DictionariesController < Admin::BaseController
 
   def new
     add_crumb "新增字典字", "#"
+    # raise @dictionary.inspect
+    @dictionary = Dictionary.new
   end
 
   def create
@@ -43,6 +45,6 @@ class Admin::DictionariesController < Admin::BaseController
   protected
 
   def find_dictionary
-    @dictionary = params[:id] ? Dictionary.find(params[:id]) : Dictionary.create(permitted_params.dictionary)
+    @dictionary = params[:id] ? Dictionary.find(params[:id]) : Dictionary.new(permitted_params.dictionary)
   end
 end
