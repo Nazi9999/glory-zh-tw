@@ -31,4 +31,8 @@ module ApplicationHelper
      Artist.all.map{|m| [m.name, m.id]}
   end
 
+  def render_game_file_existance(game)
+    game.file? ? "已建立" : "未建立"
+  end
+
 end

@@ -16,7 +16,6 @@ class Admin::GamesController < Admin::BaseController
   end
 
   def create
-    raise @game.inspect
     if @game.save
       redirect_to admin_dictionary_games_path(@dictionary), flash: { success: "新增遊戲成功!" }
     else
