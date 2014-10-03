@@ -5,6 +5,7 @@
     <%= image_tag @game.file.default_url, size: '300x300' %>
   <% end %>
   <%= f.input :dic_id, :label => "字", as: :select, collection: collection_for_dictionary_word, disabled: true %>
+  <%= f.input :game_type, label: "遊戲類型", as: :select, collection: Game::GAME_TYPE %>
   <div class="control-group">
     <div class="span5">
       <%= f.input :file, :label => "遊戲檔案", :as => :file %>

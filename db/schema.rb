@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140717173500) do
+ActiveRecord::Schema.define(version: 20141003194102) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20140717173500) do
 
   create_table "games", force: true do |t|
     t.integer  "dic_id"
+    t.string   "game_type"
     t.string   "name"
     t.string   "about"
     t.string   "file"

@@ -10,6 +10,7 @@
             <tr>
               <th>編號</th>
               <th>字</th>
+              <th>遊戲類型</th>
               <th>檔案</th>
               <th>操作</th>
             </tr>
@@ -19,6 +20,7 @@
               <tr rowspan="1">
                 <td><%= game.id %></td>
                 <td><%= game.word %></td>
+                <td><%= game.game_type %></td>
                 <td><%= render_game_file_existance(game) %></td>
                 <td>
                   <%= link_to "編輯", edit_admin_dictionary_game_path(@dictionary, game), :class => "btn btn-mini" %>

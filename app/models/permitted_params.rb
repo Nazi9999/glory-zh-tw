@@ -13,7 +13,7 @@ class PermittedParams < Struct.new(:params, :user)
   end
 
   def sixbook_attrs
-   [:word, :dic_id, :six_cat_id, :meaning, :file, :image]
+   [:word, :dic_id, :six_cat_id, :meaning, :file, :image, :remove_file, :remove_image ]
   end
 
   def sixbook_category
@@ -37,7 +37,7 @@ class PermittedParams < Struct.new(:params, :user)
   end
 
   def dictionary_attrs
-    [:word, :six_id, :six_cat_id, :component, :meaning, :term, :flash]
+    [:word, :six_id, :six_cat_id, :component, :meaning, :term, :flash, :remove_flash]
   end
 
   def creation
@@ -45,7 +45,7 @@ class PermittedParams < Struct.new(:params, :user)
   end
 
   def creation_attrs
-    [:name, :creator_id, :content, :description, :file]
+    [:name, :creator_id, :content, :description, :file, :remove_file]
   end
 
   def game
@@ -53,7 +53,7 @@ class PermittedParams < Struct.new(:params, :user)
   end
 
   def game_attrs
-    [:dic_id, :file]
+    [:dic_id, :file, :game_type, :remove_file]
   end
 
 end
