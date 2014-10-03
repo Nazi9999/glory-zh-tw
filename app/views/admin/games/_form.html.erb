@@ -1,9 +1,8 @@
 <div class="form-inputs">
-  <%= f.input :dic_id, :label => "字", :as => :select, :collection => collection_for_dictionary_word, :input_html => { :class => :chosen, :mutiple => false } %>
   <%= f.input :file, :label => "遊戲檔案", :as => :file %>
 </div>
 
 <div class="form-actions" style="text-align:center">
   <%= f.submit :value => "送出", :class => "btn btn-primary" %>
-  <%= link_to "取消", admin_games_path, :class => "btn" %>
+  <%= link_to "取消", admin_dictionary_games_path(@dictionary), :class => "btn" %>
 </div>

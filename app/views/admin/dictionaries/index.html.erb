@@ -29,6 +29,7 @@
                 <td><%= dictionary.meaning %></td>
                 <td><%= dictionary.term %></td>
                 <td>
+                  <%=link_to "遊戲列表", admin_dictionary_games_path(dictionary), :class => "btn btn-mini btn-primary" %>
                   <%= link_to "編輯", edit_admin_dictionary_path(dictionary), :class => "btn btn-mini" %>
                   <%= link_to "刪除", admin_dictionary_path(dictionary), :class => "btn btn-mini btn-danger", :method => :delete, :confirm => "請確認！！" %>
                 </td>

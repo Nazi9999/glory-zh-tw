@@ -1,5 +1,5 @@
 <% content_for :bts do %>
-  <%= link_to "新增遊戲", new_admin_game_path, :class => 'btn' %>
+  <%= link_to "新增遊戲", new_admin_dictionary_game_path(@dictionary), :class => 'btn' %>
 <% end %>
 
 <div class="widget-box">
@@ -19,8 +19,8 @@
                 <td><%= game.id %></td>
                 <td><%= game.word %></td>
                 <td>
-                  <%= link_to "編輯", edit_admin_game_path(game), :class => "btn btn-mini" %>
-                  <%= link_to "刪除", admin_game_path(game), :class => "btn btn-mini btn-danger", :method => :delete, :confirm => "請確認！！" %>
+                  <%= link_to "編輯", edit_admin_dictionary_game_path(@dictionary, game), :class => "btn btn-mini" %>
+                  <%= link_to "刪除", admin_dictionary_game_path(@dictionary, game), :class => "btn btn-mini btn-danger", :method => :delete, :confirm => "請確認！！" %>
                 </td>
               </tr>
             <% end %>   

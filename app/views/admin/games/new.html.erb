@@ -1,6 +1,6 @@
 <div class="widget-box">
   <div class="widget-content nopadding">
-    <%= simple_form_for @game, :url => admin_games_path, :method => :post, :wrapper => :admin do |g| %>
+    <%= simple_form_for @game, :url => admin_dictionary_games_path(@dictionary), :method => :post, :wrapper => :admin do |g| %>
       <%= render :partial => 'form', :locals => { :f => g } %>
     <% end %>
   </div>
