@@ -40,4 +40,12 @@ class PermittedParams < Struct.new(:params, :user)
     [:word, :six_id, :six_cat_id, :component, :meaning, :term, :flash]
   end
 
+  def creation
+    params.require(:creation).permit(*creation_attrs)
+  end
+
+  def creation_attrs
+    [:name, :creator_id, :content, :description, :file]
+  end
+
 end
