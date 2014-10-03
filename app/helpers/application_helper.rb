@@ -18,4 +18,18 @@ module ApplicationHelper
   def render_icon(name)
     content_tag(:i, " ", :class => "icon icon-#{name}")
   end
+
+  def render_text_at_most(text, max)
+    if (text.kind_of?String) && (text.length > 0)  
+
+      text.length > max ?  "#{text[0..max-1]}" "<span class='more'>...more</span>".html_safe : text
+    else
+      text
+    end
+  end
+
+  def collection_for_artist_name_with_id
+     Artist.all.map{|m| [m.name, m.id]}
+  end
+
 end

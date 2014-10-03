@@ -1,4 +1,4 @@
-class Admin::CreationsController < ApplicationController
+class Admin::CreationsController < Admin::BaseController
   before_filter :find_artist
   before_filter :find_creation, except: [:index, :new]
   before_filter except: :index do
@@ -7,11 +7,12 @@ class Admin::CreationsController < ApplicationController
 
   def index
     add_crumb "作品列表", "#"
-    @creations = Creation.page(params[:page]).per(15)
+    @creations = @artist.creations.page(params[:page]).per(15)
   end
 
   def new
     add_crumb "新增作品", "#"
+    @creation = @artist.creations.build
   end
 
   def create
@@ -47,7 +48,7 @@ class Admin::CreationsController < ApplicationController
     @artist = Artist.find(params[:artist_id])
   end
 
-  def method_name
+  def find_creation
     @creation = params[:id] ? @artist.creations.find(params[:id]) : @artist.creations.build(permitted_params.creation)
   end
 

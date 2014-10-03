@@ -1,0 +1,7 @@
+<div class="widget-box">
+  <div class="widget-content nopadding">
+    <%= simple_form_for @creation, :url => admin_artist_creations_path(@artist), :method => :post, :wrapper => :admin do |c| %>
+      <%= render :partial => 'form', :locals => { :f => c } %>
+    <% end %>
+  </div>
+</div>
