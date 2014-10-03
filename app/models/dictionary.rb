@@ -7,4 +7,12 @@ class Dictionary < ActiveRecord::Base
   delegate :category_name, to: :sixbook_category, prefix: false, allow_nil: true
   delegate :word, to: :sixbook, prefix: true, allow_nil: true
   mount_uploader :flash, DictionaryWordUploader
+
+  before_destroy :can_destroy?
+
+  protected
+
+  def can_destroy?
+    self.games.size == 0
+  end
 end

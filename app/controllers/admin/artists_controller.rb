@@ -6,7 +6,7 @@ class Admin::ArtistsController < Admin::BaseController
 
   def index
     add_crumb "文人列表", "#"
-    @artists = Artist.page(params[:page]).per(15)
+    @artists = Artist.newest.page(params[:page]).per(15)
   end
 
   def new
@@ -38,7 +38,7 @@ class Admin::ArtistsController < Admin::BaseController
     if @artist.destroy
       redirect_to admin_artists_path, flash: { success: "刪除文人#{@artist.name}成功！" }
     else
-      redirect_to admin_artists_path, flash: { error: @artist.errors.full_messages }
+      redirect_to admin_artists_path, flash: { error: "請確認#{@artist.name}是否還有文人作品！" }
     end
   end
 

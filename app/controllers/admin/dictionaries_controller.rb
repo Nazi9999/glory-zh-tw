@@ -38,7 +38,7 @@ class Admin::DictionariesController < Admin::BaseController
     if @dictionary.destroy
       redirect_to admin_dictionaries_path, flash: { success: "刪除字典字 #{@dictionary.word}成功!"}
     else
-      redirect_to admin_dictionaries_path, flash: { error: @dictionary.errors.full_messages }
+      redirect_to admin_dictionaries_path, flash: { error: "請確認字典字 #{@dictionary.word} 是否還有遊戲未刪！" }
     end
   end
 
