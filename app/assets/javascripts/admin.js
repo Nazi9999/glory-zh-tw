@@ -39,5 +39,8 @@ $(document).ready(function() {
     });
   });
 
-  $('select.chosen').chosen();
+  $('select.chosen').chosen(
+    {
+      'allow_single_deselect': true
+    });
 });
