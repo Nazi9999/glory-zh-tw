@@ -9,5 +9,6 @@ TraditionalChineseWebsite::Application.routes.draw do
     resources :sixbooks, :except => :show
     resources :sixbook_categories, :only => [:index, :edit, :update]
     resources :dictionaries, :except => :show
+    resources :games, :except => :show
   end
 end

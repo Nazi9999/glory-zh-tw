@@ -42,6 +42,7 @@ class Admin::CreationsController < Admin::BaseController
       redirect_to admin_artist_creations_path(@artist), flash: { error: @creation.errors.full_messages }
     end
   end
+  
   protected
 
   def find_artist

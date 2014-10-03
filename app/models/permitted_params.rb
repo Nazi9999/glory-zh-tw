@@ -48,4 +48,12 @@ class PermittedParams < Struct.new(:params, :user)
     [:name, :creator_id, :content, :description, :file]
   end
 
+  def game
+    params.require(:game).permit(*game_attrs)
+  end
+
+  def game_attrs
+    [:name, :dic_id, :file]
+  end
+
 end
