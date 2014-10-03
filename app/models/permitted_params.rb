@@ -53,7 +53,7 @@ class PermittedParams < Struct.new(:params, :user)
   end
 
   def game_attrs
-    [:name, :dic_id, :file]
+    [:dic_id, :file]
   end
 
 end
