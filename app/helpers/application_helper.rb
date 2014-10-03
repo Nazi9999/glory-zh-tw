@@ -20,8 +20,7 @@ module ApplicationHelper
   end
 
   def render_text_at_most(text, max)
-    if (text.kind_of?String) && (text.length > 0)  
-
+    if (text.kind_of?String) && (text.length > 0)
       text.length > max ?  "#{text[0..max-1]}" "<span class='more'>...more</span>".html_safe : text
     else
       text

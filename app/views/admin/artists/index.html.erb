@@ -22,7 +22,8 @@
                 <td><%= artist.name %></td>
                 <td><%= artist.location_name %></td>
                 <td><%= artist.description %></td>
-                <td>
+                <td colspan="3">
+                  <%= link_to "作品列表", admin_artist_creations_path(artist), :class => "btn btn-mini btn-primary" %>
                   <%= link_to "編輯", edit_admin_artist_path(artist), :class => "btn btn-mini" %>
                   <%= link_to "刪除", admin_artist_path(artist), :class => "btn btn-mini btn-danger", :method => :delete, :confirm => "請確認！！" %>
                 </td>
