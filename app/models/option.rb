@@ -1,6 +1,6 @@
 class Option < ActiveRecord::Base
-  has_many :questions, through: :question_option_memberships
-  has_many :question_option_memberships, foreign_key: :option_id
+  has_many :questions, through: :debtors
+  has_many :debtors, foreign_key: :option_id, class_name: "QuestionOptionMembership"
   scope :newest, lambda{ order("id DESC") }
   scope :category, lambda { |a| where(:o_class => a) }
   validates_presence_of :content, :o_class

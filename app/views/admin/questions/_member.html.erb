@@ -1,8 +1,8 @@
 <div class="control-group">
   <div class="controls">
-    <%= form.link_to_add "新增選項", :question_option_memberships, :class => :btn, 'data-target' => '#question_members' %>
+    <%= form.link_to_add "新增選項", :members, :class => :btn, 'data-target' => '#question_members' %>
     <div id="question_members">
-      <%= form.fields_for :question_option_memberships do |m| %>
+      <%= form.fields_for :members do |m| %>
         <%= m.label :option_class, "選項分類" %>
         <%= m.input_field :option_class, as: :select, collection: Option::OPTION_CLASS_COLLECTION  %>      
         <%= m.label :option_id, "選項" %>
