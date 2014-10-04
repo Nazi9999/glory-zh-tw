@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141004052137) do
+ActiveRecord::Schema.define(version: 20141004071708) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20141004052137) do
     t.integer  "question_id"
     t.integer  "option_id"
     t.string   "code"
+    t.boolean  "is_correct"
     t.string   "note"
     t.datetime "created_at"
     t.datetime "updated_at"
