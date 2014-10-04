@@ -9,9 +9,11 @@
         <%= m.input_field :option_id, as: :select, collection: collection_for_option_content_id, :class => :chosen %>
         <%= m.label :code, "選項代號" %>
         <%= m.input_field :code, as: :string %>
-        <%= m.label :is_correct, "正確選項" %>
+        <%= m.label :is_correct, "是否為正確選項" %>
         <%= m.check_box :is_correct, as: :boolean %>
-        <%= m.link_to_remove "刪除", :class => "btn" %>
+        <br>
+        <br>
+        <%= m.link_to_remove "刪除選項", :class => "btn" %>
       <% end %>  
     </div>
   </div>        

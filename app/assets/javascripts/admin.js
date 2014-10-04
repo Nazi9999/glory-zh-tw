@@ -45,4 +45,9 @@ $(document).ready(function() {
     {
       'allow_single_deselect': true
     });
+
+  $(document).on('nested:fieldAdded',function(event){
+    var field = event.field;
+    $('.chosen', field).chosen();
+  });
 });
