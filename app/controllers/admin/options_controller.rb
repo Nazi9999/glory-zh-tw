@@ -1,4 +1,4 @@
-class Admin::OptionController < Admin::BaseController
+class Admin::OptionsController < Admin::BaseController
   before_filter :find_option, except: [:index, :new]
   before_filter except: :index do
     add_crumb "題目選項列表", admin_options_path
@@ -6,7 +6,7 @@ class Admin::OptionController < Admin::BaseController
 
   def index
     add_crumb "題目選項列表", "#"
-    @options = Option.newest.page(params[:page].per(15))
+    @options = Option.newest.page(params[:page]).per(15)
   end
 
   def new

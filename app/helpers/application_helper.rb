@@ -28,11 +28,15 @@ module ApplicationHelper
   end
 
   def collection_for_artist_name_with_id
-     Artist.all.map{|m| [m.name, m.id]}
+    Artist.all.map{|m| [m.name, m.id]}
   end
 
   def render_game_file_existance(game)
     game.file? ? "已建立" : "未建立"
+  end
+
+  def render_option_class(option)
+    Option::OPTION_CLASS_HASH.values_at(option.o_class).first
   end
 
 end

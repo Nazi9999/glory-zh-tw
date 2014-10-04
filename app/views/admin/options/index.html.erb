@@ -1,0 +1,40 @@
+<% content_for :bts do %>
+  <%= link_to "新增選項", new_admin_option_path, :class => 'btn' %>
+<% end %>
+<div class="widget-box">
+  <div class="widget-content nopadding">
+    <div class="dataTables_wrapper">
+      <table class="table table-hover table-bordered with-check">
+          <thead>
+            <tr>
+              <th>編號</th>
+              <th>選項分類</th>
+              <th>選項子分類</th>
+              <th>註記</th>
+              <th>操作</th>
+            </tr>
+          </thead>  
+          <tbody>
+            <% @options.each do |option| %>
+              <tr>
+                <td><%= option.id %></td>
+                <td><%= render_option_class(option) %></td>
+                <td><%= option.o_item %></td>
+                <td><%= option.note %></td>
+                <td rowspan="2">
+                  <%= link_to "編輯", edit_admin_option_path(option), :class => "btn btn-mini" %>
+                  <%= link_to "刪除", admin_option_path(option), :class => "btn btn-mini btn-danger", :method => :delete, :confirm => "請確認！！" %>
+                </td>
+              </tr>
+              <tr>
+                <th>內容</th>
+                <td colspan="3"><%= option.content %></td>
+              </tr>
+            <% end %>   
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>   
+
+<%= paginate @options %>
