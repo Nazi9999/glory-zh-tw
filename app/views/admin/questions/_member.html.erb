@@ -1,0 +1,18 @@
+<div class="control-group">
+  <div class="controls">
+    <%= form.link_to_add "新增選項", :question_option_memberships, :class => :btn, 'data-target' => '#question_members' %>
+    <div id="question_members">
+      <%= form.fields_for :question_option_memberships do |m| %>
+        <%= m.label :option_class, "選項分類" %>
+        <%= m.input_field :option_class, as: :select, collection: Option::OPTION_CLASS_COLLECTION  %>      
+        <%= m.label :option_id, "選項" %>
+        <%= m.input_field :option_id, as: :select, collection: collection_for_option_content_id, :class => :chosen %>
+        <%= m.label :code, "選項代號" %>
+        <%= m.input_field :code, as: :string %>
+        <%= m.label :is_correct, "正確選項" %>
+        <%= m.check_box :is_correct, as: :boolean %>
+        <%= m.link_to_remove "刪除", :class => "btn" %>
+      <% end %>  
+    </div>
+  </div>        
+</div>        

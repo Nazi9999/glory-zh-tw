@@ -61,7 +61,7 @@ class PermittedParams < Struct.new(:params, :user)
   end
 
   def question_attrs
-    [:text, :dic_id, :q_type, :ans, :q_class, :q_item, :note]
+    [:text, :dic_id, :q_type, :ans, :q_class, :q_item, :note, members_attributes: [:id, :question_id, :option_id, :code, :is_correct, :note]]
   end
 
   def option

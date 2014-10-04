@@ -1,7 +1,8 @@
 class Option < ActiveRecord::Base
   has_many :questions, through: :question_option_memberships
-  has_many :debtors, foreign_key: :option_id , class_name: "QuestionOptionMembership"
+  has_many :question_option_memberships, foreign_key: :option_id
   scope :newest, lambda{ order("id DESC") }
+  scope :category, lambda { |a| where(:o_class => a) }
   validates_presence_of :content, :o_class
 
   OPTION_CLASS_LABEL = ["六書", "文人作品", "不分類"]  

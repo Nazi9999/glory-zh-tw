@@ -20,6 +20,8 @@
 
 //= require chosen-jquery
 
+//= require jquery_nested_form
+
 //= require twitter/bootstrap
 //= require unicorn
 

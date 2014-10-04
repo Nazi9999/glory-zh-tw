@@ -43,4 +43,8 @@ module ApplicationHelper
     Question::QUESTION_CLASS_HASH.values_at(question.q_class).first
   end
 
+  def collection_for_option_content_id
+    Option.all.map{ |o| [o.content, o.id] }
+  end
+
 end

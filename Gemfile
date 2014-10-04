@@ -80,3 +80,4 @@ gem "connection_ninja", "~> 0.4.1"
 gem "less-rails"
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'minitest', '~> 4.7.5'
+gem 'haml'
