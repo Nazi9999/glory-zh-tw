@@ -56,4 +56,28 @@ class PermittedParams < Struct.new(:params, :user)
     [:dic_id, :file, :game_type, :remove_file]
   end
 
+  def question
+    params.require(:question).permit(*question_attrs)
+  end
+
+  def question_attrs
+    [:text, :dic_id, :q_type, :ans, :q_class, :q_item, :note]
+  end
+
+  def option
+    params.require(:option).permit(*option_attrs)
+  end
+
+  def option_attrs
+    [:content, :o_class, :o_item, :note]
+  end
+
+  def q_a_membership
+    params.require(:question_option_membership).permit(*q_a_membership_attrs)
+  end
+
+  def q_a_membership_attrs
+    [:question_id, :option_id, :code, :is_correct, :note]
+  end
+
 end

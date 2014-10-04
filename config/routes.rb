@@ -11,5 +11,7 @@ TraditionalChineseWebsite::Application.routes.draw do
     resources :dictionaries, :except => :show do
       resources :games, :except => :show
     end
+    resources :questions
+    resources :options
   end
 end
