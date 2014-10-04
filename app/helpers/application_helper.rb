@@ -39,4 +39,8 @@ module ApplicationHelper
     Option::OPTION_CLASS_HASH.values_at(option.o_class).first
   end
 
+  def render_question_class(question)
+    Question::QUESTION_CLASS_HASH.values_at(question.q_class).first
+  end
+
 end

@@ -1,0 +1,13 @@
+<div class="form-inputs">
+  <%= f.input :dic_id, label: "字", as: :select, collection: collection_for_dictionary_word, :input_html => { :class => :chosen, :mutiple => false} %>
+  <%= f.input :q_type, label: "題目類型", as: :select, collection: Question::QUESTION_TYPE %>
+  <%= f.input :q_class, label: "題目分類", as: :select, collection: Question::QUESTION_CLASS_COLLECTION %>
+  <%= f.input :q_item, label: "題目子分類", as: :string %>
+  <%= f.input :text, :label =>"內容", :as => :text, input_html: { :rows => 5 } %>
+  <%= f.input :note, :label => "註記", :as => :string %>
+</div>
+
+<div class="form-actions" style="text-align:center">
+  <%= f.submit :value => "送出", :class => "btn btn-primary" %>
+  <%= link_to "取消", admin_questions_path, :class => "btn" %>
+</div>

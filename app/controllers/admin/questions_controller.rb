@@ -6,7 +6,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   def index
     add_crumb "題目列表", "#"
-    @questions = Question.newest.page((params[:page]).per(15))
+    @questions = Question.newest.page(params[:page]).per(15)
   end
 
   def new
