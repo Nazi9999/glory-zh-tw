@@ -46,9 +46,26 @@ $(document).ready(function() {
       'allow_single_deselect': true
     });
 
+  var nextChosenId = 0;
+
+  $('[option_select=true]').on('change',function(e){
+        $this = $(this);
+        $option_target = $('.chosen[option_target=true]');
+        $option_target.attr('id','target-'+nextChosenId++);
+        $.get('/admin/options.js',{'options_class': $this.val(), 'chosen_id': '#'+$option_target.attr('id')});
+      });
+
+
   $(document).on('nested:fieldAdded',function(event){
     var field = event.field;
+    var class_select = $('[option_select=true]', field);
     var chosen = $('.chosen', field);
+    chosen.attr('id','target-'+nextChosenId++);
     chosen.chosen();
+    class_select.each(function(){
+      $(this).on('change',function(e){
+        $.get('/admin/options.js',{'options_class': $(this).val(), 'chosen_id': '#'+chosen.attr('id')});
+      });
+    });
   });
 });

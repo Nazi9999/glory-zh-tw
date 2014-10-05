@@ -69,7 +69,7 @@ class PermittedParams < Struct.new(:params, :user)
   end
 
   def option_attrs
-    [:content, :o_class, :o_item, :note]
+    [:content, :o_class, :o_item, :note, 'options_class', 'chosen_id']
   end
 
   def q_a_membership

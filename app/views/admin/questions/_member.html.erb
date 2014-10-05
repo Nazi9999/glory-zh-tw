@@ -9,7 +9,7 @@
         <% if m.object.new_record? %>
           <%= m.input_field :option_id, as: :select, collection: collection_for_option_content_id(nil), :class => :chosen %>
         <% else %>
-          <%= m.input_field :option_id, as: :select, collection: collection_for_option_content_id(m.object.option.o_class), :class => :chosen %>
+          <%= m.input_field :option_id, as: :select, collection: collection_for_option_content_id(m.object.option.o_class), :class => :chosen, option_target: true %>
         <% end %> 
         <%= m.label :code, "選項代號" %>
         <%= m.input_field :code, as: :string %>

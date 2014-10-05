@@ -1,5 +1,5 @@
 class Admin::OptionsController < Admin::BaseController
-  before_filter :find_option, except: [:index, :new]
+  before_filter :find_option, except: [:index, :new, :foo]
   before_filter except: :index do
     add_crumb "題目選項列表", admin_options_path
   end

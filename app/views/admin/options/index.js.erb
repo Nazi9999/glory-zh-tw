@@ -1,0 +1,4 @@
+<% collection = Option.category(params['options_class']).map{ |o| [o.content, o.id] }.unshift(['',nil]) %>
+var options = "<%= escape_javascript(options_for_select(collection)) %>"
+$("<%= params['chosen_id'] %>").html(options);
+$("<%= params['chosen_id'] %>").trigger('liszt:updated');
