@@ -48,6 +48,7 @@ $(document).ready(function() {
 
   $(document).on('nested:fieldAdded',function(event){
     var field = event.field;
-    $('.chosen', field).chosen();
+    var chosen = $('.chosen', field);
+    chosen.chosen();
   });
 });

@@ -4,9 +4,13 @@
     <div id="question_members">
       <%= form.fields_for :members do |m| %>
         <%= m.label :option_class, "選項分類" %>
-        <%= m.input_field :option_class, as: :select, collection: Option::OPTION_CLASS_COLLECTION  %>      
+        <%= m.input_field :option_class, as: :select, collection: Option::OPTION_CLASS_COLLECTION, :option_select => true %>      
         <%= m.label :option_id, "選項" %>
-        <%= m.input_field :option_id, as: :select, collection: collection_for_option_content_id, :class => :chosen %>
+        <% if m.object.new_record? %>
+          <%= m.input_field :option_id, as: :select, collection: collection_for_option_content_id(nil), :class => :chosen %>
+        <% else %>
+          <%= m.input_field :option_id, as: :select, collection: collection_for_option_content_id(m.object.option.o_class), :class => :chosen %>
+        <% end %> 
         <%= m.label :code, "選項代號" %>
         <%= m.input_field :code, as: :string %>
         <%= m.label :is_correct, "是否為正確選項" %>
