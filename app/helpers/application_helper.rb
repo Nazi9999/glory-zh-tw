@@ -47,4 +47,8 @@ module ApplicationHelper
     @tt = option_class ? Option.category(option_class).map{ |o| [o.content, o.id] } : []
   end
 
+  def render_question_answers(question)
+    question.ans.length == 0 ? nil : question.ans.join(",")
+  end
+
 end
