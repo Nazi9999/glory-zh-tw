@@ -7,6 +7,7 @@ class Question < ActiveRecord::Base
   serialize :ans, Array
 
   accepts_nested_attributes_for :members, allow_destroy: true
+  accepts_nested_attributes_for :options
   validates_presence_of :q_type, :q_class, :text
 
   after_save :check_answer

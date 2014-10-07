@@ -5,6 +5,7 @@
   <%= f.input :q_item, label: "題目子分類", as: :string %>
   <%= f.input :text, :label =>"內容", :as => :text, input_html: { :rows => 5 } %>
   <%= render :partial => 'member', :locals => { :form => f } %>
+  <%= render :partial => 'option', :locals => { :form => f } %>
   <%= f.input :note, :label => "註記", :as => :string %>
 </div>
 
