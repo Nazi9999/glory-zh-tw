@@ -48,9 +48,9 @@ $(document).ready(function() {
 
   var nextChosenId = 0;
 
-  $('[option_select=true]').on('change',function(e){
+  $('[option_selected=true]').on('change',function(e){
         $this = $(this);
-        $option_target = $('.chosen[option_target=true]');
+        $option_target = $this.next().next()
         $option_target.attr('id','target-'+nextChosenId++);
         $.get('/admin/options.js',{'options_class': $this.val(), 'chosen_id': '#'+$option_target.attr('id')});
       });
