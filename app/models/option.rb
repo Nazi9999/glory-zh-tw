@@ -5,6 +5,8 @@ class Option < ActiveRecord::Base
   scope :category, lambda { |a| where(:o_class => a) }
   validates_presence_of :content, :o_class
 
+  attr_accessor :option_code, :question_id
+
   OPTION_CLASS_LABEL = ["六書", "文人作品", "不分類"]  
   OPTION_CLASS_VALUE = [1,2,99]
   OPTION_CLASS_COLLECTION = OPTION_CLASS_LABEL.zip(OPTION_CLASS_VALUE)
