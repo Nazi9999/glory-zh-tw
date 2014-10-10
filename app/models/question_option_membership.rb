@@ -5,7 +5,7 @@ class QuestionOptionMembership < ActiveRecord::Base
   validates_presence_of :option_id, :question_id
 
   after_create :check_option_code
-  validate :check_duplicated_code
+  # validate :check_duplicated_code, associated: true
 
   protected
 
@@ -16,7 +16,7 @@ class QuestionOptionMembership < ActiveRecord::Base
     end
   end
 
-  def check_duplicated_code
-    errors.add(:base, "選項代號不可重複！") if self.question.members.map(&:code).include?(self.code)
-  end
+  # def check_duplicated_code
+  #   errors.add(:base, "選項代號不可重複！") if self.question.members.map(&:code).include?(self.code)
+  # end
 end

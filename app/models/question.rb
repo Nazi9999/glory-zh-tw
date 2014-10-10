@@ -11,6 +11,7 @@ class Question < ActiveRecord::Base
   validates_presence_of :q_type, :q_class, :text
 
   after_save :check_answer
+  validate :check_duplicated_code, associated: true
 
 
   QUESTION_TYPE = ["單選", "複選"]
@@ -32,6 +33,13 @@ class Question < ActiveRecord::Base
       result
     end
     self.update_column :ans, answer
+  end
+
+  def check_duplicated_code
+
+    unless self.members.map(&:code).uniq.length == self.members.map(&:code).length
+      errors.add(:base, "選項代號不可重複") 
+    end
   end
 
 end
