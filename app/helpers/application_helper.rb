@@ -51,4 +51,8 @@ module ApplicationHelper
     question.ans.length == 0 ? nil : question.ans.join(",")
   end
 
+  def render_is_super_user(user)
+    user.is_super_user ? "是" : "否"
+  end
+
 end

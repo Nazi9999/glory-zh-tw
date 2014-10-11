@@ -1,0 +1,19 @@
+<h2>Sign up</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :email, required: true, autofocus: true, label: "Email", hint: "作為登入帳號" %>
+    <%= f.input :password, required: true, label: "密碼" %>
+    <%= f.input :password_confirmation, required: true, label: "請再輸入密碼" %>
+    <%= f.input :name, label: "名稱", required: true %>
+    <%= f.input :description, label: "敘述" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>

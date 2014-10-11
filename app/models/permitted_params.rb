@@ -5,7 +5,7 @@ class PermittedParams < Struct.new(:params, :user)
   end
 
   def user_attrs
-    [:name, :age, :sex, :birth, :description, :location, :is_super_user, :email, :password, :password_confirmation]
+    [:name, :age, :sex, :birth, :description, :location, :is_super_user, :email, :password, :password_confirmation, :current_password]
   end
 
   def sixbook

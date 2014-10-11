@@ -1,0 +1,10 @@
+<div class="form-inputs">
+  <%= f.input :email, label: "帳號", as: :string, hint: "以Email做帳號" %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  <%= f.input :name, :label =>"名稱", :as => :string %>
+  <%= f.input :description, :label => "介紹", :as => :text, input_html: { :rows => 15} %>
+  <% if current_user.is_super_user %>
+    <%= f.input :is_super_user, label: "超級管理者", as: :boolean %>
+  <% end %>
+</div>

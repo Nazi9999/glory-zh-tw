@@ -1,0 +1,43 @@
+<% content_for :bts do %>
+  <% if current_user.is_super_user %>
+    <%= link_to "新增管理者", new_admin_user_path, :class => 'btn' %>
+  <% end %>
+<% end %>
+
+<div class="widget-box">
+  <div class="widget-content nopadding">
+    <div class="dataTables_wrapper">
+      <table class="table table-hover table-bordered with-check">
+          <thead>
+            <tr>
+              <th>編號</th>
+              <th>名稱</th>
+              <th>帳號</th>
+              <th>超級管理者</th>
+              <th>操作</th>
+            </tr>
+          </thead>  
+          <tbody>
+            <% @users.each do |user| %>
+              <tr rowspan="1">
+                <td><%= user.id %></td>
+                <td><%= user.name %></td>
+                <td><%= user.email %></td>
+                <td><%= render_is_super_user(user) %></td>
+                <td colspan="3">
+                  <% if current_user.email == user.email %>
+                    <%= link_to "編輯", edit_admin_user_path(user), :class => "btn btn-mini" %>
+                  <% end %>
+                  <% if current_user.is_super_user %>
+                    <%= link_to "刪除", admin_user_path(user), :class => "btn btn-mini btn-danger", :method => :delete, :confirm => "請確認！！" %>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>   
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>   
+
+<%= paginate @users %>
