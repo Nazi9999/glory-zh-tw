@@ -49,6 +49,7 @@ group :development do
   gem 'meta_request'
 
   gem 'venus', '~> 0.8.6'
+  gem 'xray-rails'
 end
 gem 'paper_trail', '~> 3.0.3'
 gem 'differ', '~> 0.1.2'
