@@ -5,12 +5,12 @@ class Admin::DictionariesController < Admin::BaseController
   end
 
   def index
-    @dictionaries = Dictionary.newest.page(params[:page]).per(15)
+    @search = Dictionary.includes(:sixbook).search(params[:q])
+    @dictionaries = @search.result.page(params[:page]).per(15)
   end
 
   def new
     add_crumb "新增字典字", "#"
-    # raise @dictionary.inspect
     @dictionary = Dictionary.new
   end
 

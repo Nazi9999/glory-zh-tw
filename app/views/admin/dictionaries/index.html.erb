@@ -1,6 +1,10 @@
 <% content_for :bts do %>
   <%= link_to "新增字典字", new_admin_dictionary_path, :class => 'btn' %>
+  <%= link_to "搜尋", "#", :class => 'btn', :data => { :type => :toggle, :to => ".search_form"} %>
 <% end %>
+<div class="search_form"{class = <% @search.result.length == 0 ? 'hide' : '' %>} >
+  <%= render :partial => 'search', :object => @search %>
+</div>
 
 <div class="widget-box">
   <div class="widget-content nopadding">
@@ -31,7 +35,7 @@
                 <td>
                   <%=link_to "遊戲列表", admin_dictionary_games_path(dictionary), :class => "btn btn-mini btn-primary" %>
                   <%= link_to "編輯", edit_admin_dictionary_path(dictionary), :class => "btn btn-mini" %>
-                  <%= link_to "刪除", admin_dictionary_path(dictionary), :class => "btn btn-mini btn-danger", :method => :delete, :confirm => "請確認！！" %>
+                  <%= link_to "刪除", admin_dictionary_path(dictionary), :class => "btn btn-mini btn-danger", :method => :delete, data: { confirm: '請確認！' } %>
                 </td>
               </tr>
             <% end %>   

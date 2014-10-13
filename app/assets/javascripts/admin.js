@@ -68,4 +68,13 @@ $(document).ready(function() {
       });
     });
   });
+
+  $('[data-type=toggle]').each(function(){
+    $btn = $(this);
+    $btn.on('click',function(){
+      $($btn.data('to')).toggleClass('hide');
+      return false;
+    });
+  });
+  
 });
