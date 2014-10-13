@@ -1,11 +1,11 @@
-<% content_for :bts do %>
+<% content_for :bts, class: "btn-group" do %>
   <%= link_to "新增字典字", new_admin_dictionary_path, :class => 'btn' %>
-  <%= link_to "搜尋", "#", :class => 'btn', :data => { :type => :toggle, :to => ".search_form"} %>
+  <%= link_to "搜尋" ,"#", :class => 'btn', :data => { :type => :toggle, :to => ".search_form"} %>
 <% end %>
-<div class="search_form"{class = <% @search.result.length == 0 ? 'hide' : '' %>} >
+<div class="search_form <%= params[:q] == nil ? 'hide' : '' %>">
   <%= render :partial => 'search', :object => @search %>
 </div>
-
+<%= "總數: " + @dictionaries.total_count.to_s %>
 <div class="widget-box">
   <div class="widget-content nopadding">
     <div class="dataTables_wrapper">
