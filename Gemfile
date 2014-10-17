@@ -49,6 +49,7 @@ group :development do
   gem 'meta_request'
 
   gem 'venus', '~> 0.8.6'
+  gem 'xray-rails'
 end
 gem 'paper_trail', '~> 3.0.3'
 gem 'differ', '~> 0.1.2'
@@ -58,16 +59,13 @@ gem 'anjlab-bootstrap-rails', '>= 2.3', :require => 'bootstrap-rails'
 gem 'crummy', '~> 1.8.0'
 gem 'settingslogic'
 gem 'aws-sdk'
-gem 'carrierwave', '0.7.1'
-gem 'mini_magick', '~> 3.6.0'
-gem 'carrierwave-meta', '~> 0.0.4'
+gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 3.8.0'
+gem 'carrierwave-meta', '~> 0.0.5'
 gem 'fog'
 gem 'jquery-ui-rails', '~> 4.0.3'
 gem 'chosen-rails', '~> 0.9.15'
-group :assets do
-  gem 'therubyracer', :platforms => :ruby
-
-end
+gem 'therubyracer', :platforms => :ruby
 
 gem 'kaminari'
 gem 'whenever'
@@ -80,3 +78,8 @@ group :development, :test do
   gem 'turn', '~> 0.8.3', :require => false
 end
 gem "connection_ninja", "~> 0.4.1"
+gem "less-rails"
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'minitest', '~> 4.7.5'
+gem 'haml'
+gem 'ransack'

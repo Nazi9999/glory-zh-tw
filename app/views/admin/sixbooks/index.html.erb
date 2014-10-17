@@ -1,0 +1,37 @@
+<% content_for :bts do %>
+  <%= link_to "新增六書", new_admin_sixbook_path, :class => 'btn' %>
+<% end %>
+
+<div class="widget-box">
+  <div class="widget-content nopadding">
+    <div class="dataTables_wrapper">
+      <table class="table table-hover table-bordered with-check">
+          <thead>
+            <tr>
+              <th>編號</th>
+              <th>字</th>
+              <th>六書分類</th>
+              <th>字義</th>
+              <th>操作</th>
+            </tr>
+          </thead>  
+          <tbody>
+            <% @sixbooks.each do |sixbook| %>
+              <tr rowspan="1">
+                <td><%= sixbook.id %></td>
+                <td><%= sixbook.word %></td>
+                <td><%= sixbook.category_name %></td>
+                <td><%= sixbook.meaning %></td>
+                <td>
+                  <%= link_to "編輯", edit_admin_sixbook_path(sixbook), :class => "btn btn-mini" %>
+                  <%= link_to "刪除", admin_sixbook_path(sixbook), :class => "btn btn-mini btn-danger", :method => :delete, :confirm => "請確認！！" %>
+                </td>
+              </tr>
+            <% end %>   
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>   
+
+<%= paginate @sixbooks %>

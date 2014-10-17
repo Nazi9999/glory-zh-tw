@@ -1,0 +1,28 @@
+<div class="control-group">
+  <div class="controls">
+    <%= form.link_to_add "新增選項", :members, :class => :btn, 'data-target' => '#question_members' %>
+    <div id="question_members">
+      <%= form.fields_for :members do |m| %>
+          <br>
+          <%= m.label :option_class, "選項分類" %>
+          <% if m.object.new_record? %>
+            <%= m.input_field :option_class, as: :select, collection: Option::OPTION_CLASS_COLLECTION, :option_select => true %>
+          <% else %>
+            <%= m.input_field :option_class, as: :select, collection: Option::OPTION_CLASS_COLLECTION, :option_selected => true %>
+          <% end %>       
+          <%= m.label :option_id, "選項" %>
+          <% if m.object.new_record? %>
+            <%= m.input_field :option_id, as: :select, collection: collection_for_option_content_id(nil), :class => :chosen %>
+          <% else %>
+            <%= m.input_field :option_id, as: :select, collection: collection_for_option_content_id(m.object.option.o_class), :class => :chosen, option_target: true %>
+          <% end %> 
+          <%= m.label :code, "選項代號" %>
+          <%= m.input_field :code, as: :string %>
+          <%= m.label :is_correct, "是否為正確選項" %>
+          <%= m.check_box :is_correct, as: :boolean %>
+          <br>
+          <%= m.link_to_remove "刪除選項", :class => "btn" %>
+      <% end %>  
+    </div>
+  </div>        
+</div>        

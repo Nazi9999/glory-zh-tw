@@ -1,0 +1,8 @@
+
+<div class="widget-box">
+  <div class="widget-content nopadding">
+    <%= simple_form_for @sixbook_category, :url => admin_sixbook_category_path(@sixbook_category), :method => :put, :wrapper => :admin do |s| %>
+      <%= render :partial => 'form', :locals => { :f => s } %>
+    <% end %>
+  </div>
+</div>

@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require jquery.ui.datepicker
 
 //= require jquery.ui.slider
@@ -20,6 +19,8 @@
 //= require jquery.timepicker
 
 //= require chosen-jquery
+
+//= require jquery_nested_form
 
 //= require twitter/bootstrap
 //= require unicorn
@@ -30,9 +31,7 @@ $(document).ready(function() {
   $('.datepicker').datepicker({
     dateFormat: "yy-mm-dd"
   });
-});
 
-$(document).ready(function() {
   $(".datetimepicker").each(function(){
     $(this).datetimepicker({
       dateFormat: "yy-mm-dd",
@@ -41,8 +40,41 @@ $(document).ready(function() {
       stepMinute: 10
     });
   });
-});
 
-$(document).ready(function() {
-  $('select.chosen').chosen();
+  $('select.chosen').chosen(
+    {
+      'allow_single_deselect': true
+    });
+
+  var nextChosenId = 0;
+
+  $('[option_selected=true]').on('change',function(e){
+        $this = $(this);
+        $option_target = $this.next().next()
+        $option_target.attr('id','target-'+nextChosenId++);
+        $.get('/admin/options.js',{'options_class': $this.val(), 'chosen_id': '#'+$option_target.attr('id')});
+      });
+
+
+  $(document).on('nested:fieldAdded',function(event){
+    var field = event.field;
+    var class_select = $('[option_select=true]', field);
+    var chosen = $('.chosen', field);
+    chosen.attr('id','target-'+nextChosenId++);
+    chosen.chosen();
+    class_select.each(function(){
+      $(this).on('change',function(e){
+        $.get('/admin/options.js',{'options_class': $(this).val(), 'chosen_id': '#'+chosen.attr('id')});
+      });
+    });
+  });
+
+  $('[data-type=toggle]').each(function(){
+    $btn = $(this);
+    $btn.on('click',function(){
+      $($btn.data('to')).toggleClass('hide');
+      return false;
+    });
+  });
+  
 });

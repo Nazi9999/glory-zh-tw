@@ -17,12 +17,11 @@
 
  *= require chosen
 
- *= require twitter/bootstrap
- *= require twitter/bootstrap-responsive
  *= require unicorn.main
  *= require unicorn.grey
 
 
 
  *= require_self
+ *= require bootstrap_and_overrides
  */

@@ -1,0 +1,7 @@
+<div class="widget-box">
+  <div class="widget-content nopadding">
+    <%= simple_nested_form_for @question, :url => admin_question_path, :method => :put, :wrapper => :admin do |q| %>
+      <%= render :partial => 'form', :locals => { :f => q } %>
+    <% end %>
+  </div>
+</div>

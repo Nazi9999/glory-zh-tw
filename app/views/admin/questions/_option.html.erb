@@ -1,0 +1,21 @@
+<div class="control-group">
+  <div class="controls">
+    <%= form.link_to_add "建立選項", :options, :class => :btn, 'data-target' => '#question_options' %>
+    <div id="question_options">
+      <%= form.fields_for :options do |o| %>
+          <% if o.object.new_record? %>
+            <%= o.label :o_class, "選項分類" %>
+            <%= o.input_field :o_class, as: :select, collection: Option::OPTION_CLASS_COLLECTION %>
+            <%= o.label :option_code, "選項代號" %>
+            <%= o.input_field :option_code, as: :string %>
+            <%= o.label :content, "選項內容" %>
+            <%= o.input_field :content, as: :string %>
+            
+            <br>
+            <br>
+            <%= o.link_to_remove "取消建立", :class => "btn" %>
+          <% end %>                
+      <% end %>  
+    </div>
+  </div>        
+</div>        

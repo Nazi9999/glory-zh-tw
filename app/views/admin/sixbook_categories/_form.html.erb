@@ -1,0 +1,9 @@
+<div class="form-inputs">
+  <%= f.input :category_name, :label =>"名稱", :as => :string, :disabled => true %>
+  <%= f.input :description, :label => "解釋", :as => :text, input_html: { :rows => 15} %>
+</div>
+
+<div class="form-actions" style="text-align:center">
+  <%= f.submit :value => "送出", :class => "btn btn-primary" %>
+  <%= link_to "取消", admin_sixbook_categories_path, :class => "btn" %>
+</div>

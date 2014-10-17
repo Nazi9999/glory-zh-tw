@@ -16,9 +16,7 @@
  *= require jquery.timepicker
 
  *= require chosen
-
- *= require twitter/bootstrap
- *= require twitter/bootstrap-responsive
+ *= require bootstrap_and_overrides
  *= require unicorn.main
  *= require unicorn.grey
 
@@ -26,3 +24,7 @@
 
  *= require_self
  */
+
+ span.more{
+  color: blue;
+ }

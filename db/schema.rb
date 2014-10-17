@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140716150621) do
+ActiveRecord::Schema.define(version: 20141004071708) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20140716150621) do
 
   create_table "games", force: true do |t|
     t.integer  "dic_id"
+    t.string   "game_type"
     t.string   "name"
     t.string   "about"
     t.string   "file"
@@ -64,12 +65,43 @@ ActiveRecord::Schema.define(version: 20140716150621) do
     t.datetime "updated_at"
   end
 
+  create_table "options", force: true do |t|
+    t.string   "content"
+    t.integer  "o_class"
+    t.integer  "o_item"
+    t.string   "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "posts", force: true do |t|
     t.integer  "user_id"
     t.text     "content"
     t.integer  "like_count"
     t.integer  "dislike_count"
     t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "question_option_memberships", force: true do |t|
+    t.integer  "question_id"
+    t.integer  "option_id"
+    t.string   "code"
+    t.boolean  "is_correct"
+    t.string   "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "questions", force: true do |t|
+    t.text     "text"
+    t.integer  "dic_id"
+    t.string   "q_type"
+    t.string   "ans"
+    t.integer  "q_class"
+    t.integer  "q_item"
+    t.string   "note"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -119,7 +151,14 @@ ActiveRecord::Schema.define(version: 20140716150621) do
   end
 
   create_table "users", force: true do |t|
+    t.string   "name"
     t.string   "email",                  default: "", null: false
+    t.integer  "age"
+    t.boolean  "sex"
+    t.date     "birth"
+    t.text     "description"
+    t.string   "location"
+    t.boolean  "is_super_user"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"

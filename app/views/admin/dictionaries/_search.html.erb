@@ -1,0 +1,39 @@
+<div class="widget-box">
+  <div class="widget-content">
+    <%= search_form_for @search, :as => :q, :url => admin_dictionaries_path, :method => :get, :wrapper => :admin do |f| %>
+      <fieldset>
+        <legend class="text-center">搜尋</legend>
+          <div class="form-horizontal">
+            <div class="control-group row-fluid form-inline">
+              <%= f.label :id_in, "ID", :class => 'control-label' %>
+              <div class='controls'>
+                <%= f.search_field :id_in, class: "search-query" %>
+              </div>
+            </div>
+            <div class="control-group row-fluid form-inline">
+              <%= f.label :word_eq, "字", :class => 'control-label' %>
+              <div class='controls'>
+                <%= f.search_field :word_eq, class: "search-query" %>
+              </div>
+            </div>
+            <div class="control-group row-fluid form-inline">
+              <%= f.label :component_cont_any, "部首", :class => 'control-label' %>
+              <div class='controls'>
+                <%= f.search_field :component_cont_any, class: "search-query" %>
+              </div>
+            </div>
+            <div class="control-group row-fluid form-inline">
+              <%= f.label :term_cont, "造詞造句", :class => 'control-label' %>
+              <div class='controls'>
+                <%= f.search_field :term_cont, class: "search-query" %>
+              </div>
+            </div>
+          </div>
+      </fieldset>
+      <div class="form-actions" style="text-align:center">
+        <%= f.submit :value => "搜尋", :class => 'btn' %>
+        <%= link_to "返回", admin_dictionaries_path, :class => 'btn' %>
+      </div>
+    <% end %>
+  </div>
+</div>

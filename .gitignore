@@ -14,10 +14,11 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+/public/uploads/
 /public/assets
 /public/traditional_chinese_website
 config/database.yml
 config/setting.yml
-
+.rvmrc
 /config/y
 .DS_Store

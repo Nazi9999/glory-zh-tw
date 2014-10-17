@@ -1,0 +1,33 @@
+<% content_for :bts do %>
+  <%= link_to "新增地點", new_admin_location_path, :class => 'btn' %>
+<% end %>
+
+<div class="widget-box">
+  <div class="widget-content nopadding">
+    <div class="dataTables_wrapper">
+      <table class="table table-hover table-bordered with-check">
+          <thead>
+            <tr>
+              <th>編號</th>
+              <th>地點</th>
+              <th>操作</th>
+            </tr>
+          </thead>  
+          <tbody>
+            <% @locations.each do |location| %>
+              <tr rowspan="1">
+                <td><%= location.id %></td>
+                <td><%= location.name %></td>
+                <td>
+                  <%= link_to "編輯", edit_admin_location_path(location), :class => "btn btn-mini" %>
+                  <%= link_to "刪除", admin_location_path(location), :class => "btn btn-mini btn-danger", :method => :delete, :confirm => "請確認！！" %>
+                </td>
+              </tr>
+            <% end %>   
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>   
+
+<%= paginate @locations %>

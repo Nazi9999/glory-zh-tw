@@ -1,0 +1,41 @@
+<div class="form-inputs">
+  <% if @sixbook.image? %>
+    <%= image_tag @sixbook.image, size: '300x300' %>
+  <% else %>
+    <%= image_tag @sixbook.image.default_url, size: '300x300' %>
+  <% end %>
+  <% if @sixbook.file? %>
+    <embed src="<%= asset_path(@sixbook.file) %>" height="300" width="300"/>
+  <% else %>
+    <%= image_tag @sixbook.file.default_url, size: '300x300' %>
+  <% end %>
+  <%= f.input :word, :label =>"字名", :as => :string, :input_html => { :maxlength => 12 } %>
+  <%= f.input :six_cat_id, :label => "六書分類" , :as => :select, :collection => collection_for_six_category, :input_html => { :class => :chosen, :mutiple => false } %>
+  <%= f.input :dic_id, :label => "字典" , :as => :select, :collection => collection_for_dictionary_word, :input_html => { :class => :chosen, :mutiple => false } %>
+  <%= f.input :meaning , :input_html => { :maxlength => 400 }, :label => "解釋", :as => :text, input_html: { :rows => 15} %>
+  <div class="control-group">
+    <div class="span5">
+      <%= f.input :image, :label => "六書圖片", :as => :file %>
+    </div>
+    <% if @sixbook.image? %>
+      <div class="span5">
+        <%= f.input :remove_image, :label => "刪除圖片", :as => :boolean %>  
+      </div>
+    <% end %>
+  </div>
+  <div class="control-group">
+    <div class="span5">
+      <%= f.input :file, :label => "六書動畫", :as => :file %>
+    </div>
+    <% if @sixbook.file? %>
+      <div class="span5">
+        <%= f.input :remove_file, :label => "刪除動畫", :as => :boolean %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="form-actions" style="text-align:center">
+  <%= f.submit :value => "送出", :class => "btn btn-primary" %>
+  <%= link_to "取消", admin_sixbooks_path, :class => "btn" %>
+</div>
