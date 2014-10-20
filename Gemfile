@@ -54,7 +54,7 @@ group :development do
   gem 'capistrano-rails', require: false
   gem 'capistrano-rvm'
 end
-gem 'paper_trail', '~> 3.0.3'
+gem 'paper_trail', '~> 3.0.6'
 gem 'differ', '~> 0.1.2'
 gem 'simple_form', '~> 3.0.2'
 gem 'nested_form'
