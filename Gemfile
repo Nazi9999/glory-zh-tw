@@ -54,6 +54,7 @@ group :development do
   gem 'capistrano-rails', require: false
   gem 'capistrano-rvm'
   gem 'capistrano-precompile-on-local'
+  gem 'capistrano-rails-tail-log'
 end
 gem 'paper_trail', '~> 3.0.6'
 gem 'differ', '~> 0.1.2'
