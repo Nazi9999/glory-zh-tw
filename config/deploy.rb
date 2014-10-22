@@ -56,3 +56,5 @@ namespace :deploy do
   end
 
 end
+
+after 'deploy:assets:precompile', 'deploy:assets:sync'

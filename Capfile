@@ -22,6 +22,7 @@ require 'capistrano/rails/assets'
 require 'capistrano/precompile_on_local'
 require 'capistrano/rails/migrations'
 require 'capistrano/rails_tail_log'
+require 'capistrano/assets_sync'
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
