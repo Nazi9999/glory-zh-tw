@@ -7,13 +7,42 @@ class DictionaryGameUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  storage Rails.env.test? ? :file : :fog
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
+  
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "tchinese/#{model.class.to_s.underscore}/#{mounted_as}/#{id_partition(model)}"
+  end
+
+  def default_url
+    "http://placehold.it/330&text=pic"
+  end
+  
+
+  def filename
+    "#{secure_token}.#{file.extension}" if original_filename.present?
+  end
+
+  private
+
+  def secure_token
+    var = :"@#{mounted_as}_secure_token"
+    model.instance_variable_get(var) || model.instance_variable_set(var, SecureRandom.uuid)
+  end
+
+  def id_partition(attachment)
+    case id = attachment.id
+    when Integer
+      ("%09d" % id).scan(/\d{3}/).join("/")
+    when String
+      id.scan(/.{3}/).first(3).join("/")
+    else
+      nil
+    end
+
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
@@ -48,8 +77,5 @@ class DictionaryGameUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
-  def default_url
-     "http://placehold.it/330&text=pic"
-  end
 
 end
