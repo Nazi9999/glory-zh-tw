@@ -67,7 +67,7 @@ gem 'aws-sdk'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 3.8.0'
 gem 'carrierwave-meta', '~> 0.0.5'
-gem 'fog'
+gem 'fog', '~> 1.25.0'
 gem 'jquery-ui-rails', '~> 4.0.3'
 gem 'chosen-rails', '~> 0.9.15'
 gem 'therubyracer', :platforms => :ruby
