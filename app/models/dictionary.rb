@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: dictionaries
+#
+#  id         :integer          not null, primary key
+#  word       :string(255)
+#  six_id     :integer
+#  six_cat_id :integer
+#  component  :string(255)
+#  meaning    :text
+#  term       :string(255)
+#  dicflash   :string(255)
+#  flash      :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Dictionary < ActiveRecord::Base
   belongs_to :sixbook_category, :foreign_key => :six_cat_id
   has_one :sixbook, :foreign_key => :dic_id

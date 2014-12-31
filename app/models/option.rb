@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: options
+#
+#  id         :integer          not null, primary key
+#  content    :string(255)
+#  o_class    :integer
+#  o_item     :integer
+#  note       :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Option < ActiveRecord::Base
   has_many :questions, through: :debtors
   has_many :debtors, foreign_key: :option_id, class_name: "QuestionOptionMembership"

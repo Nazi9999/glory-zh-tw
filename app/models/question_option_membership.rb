@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: question_option_memberships
+#
+#  id          :integer          not null, primary key
+#  question_id :integer
+#  option_id   :integer
+#  code        :string(255)
+#  is_correct  :boolean
+#  note        :string(255)
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 class QuestionOptionMembership < ActiveRecord::Base
   belongs_to :question, foreign_key: :question_id
   belongs_to :option, foreign_key: :option_id

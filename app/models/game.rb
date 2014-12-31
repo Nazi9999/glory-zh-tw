@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: games
+#
+#  id         :integer          not null, primary key
+#  dic_id     :integer
+#  game_type  :string(255)
+#  name       :string(255)
+#  about      :string(255)
+#  file       :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Game < ActiveRecord::Base
   belongs_to :dictionary, :foreign_key => :dic_id
   validates_presence_of :dic_id, :file

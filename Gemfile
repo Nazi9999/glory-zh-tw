@@ -88,3 +88,5 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'minitest', '~> 4.7.5'
 gem 'haml'
 gem 'ransack'
+gem 'slim-rails'
+gem 'annotate', '>=2.6.0'

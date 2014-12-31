@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: artists
+#
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  location_id :integer
+#  description :text
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 class Artist < ActiveRecord::Base
   belongs_to :location, :foreign_key => :location_id
   has_many :creations, :foreign_key => :creator_id
