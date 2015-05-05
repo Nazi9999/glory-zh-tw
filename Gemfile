@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.4'
+gem 'rails', '4.1.9'
 
 
 gem 'mysql2'
@@ -85,7 +85,7 @@ end
 gem "connection_ninja", "~> 0.4.1"
 gem "less-rails"
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
-gem 'minitest', '~> 4.7.5'
+gem 'minitest', '~> 5.6.1'
 gem 'haml'
 gem 'ransack'
 gem 'slim-rails'
