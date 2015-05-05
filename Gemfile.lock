@@ -172,6 +172,8 @@ GEM
     fog-xml (0.1.1)
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
+    font-awesome-rails (4.3.0.0)
+      railties (>= 3.2, < 5.0)
     formatador (0.2.5)
     haml (4.0.5)
       tilt
@@ -371,6 +373,7 @@ DEPENDENCIES
   differ (~> 0.1.2)
   factory_girl_rails
   fog (~> 1.25.0)
+  font-awesome-rails
   haml
   jbuilder (~> 1.2)
   jquery-rails
@@ -392,6 +395,7 @@ DEPENDENCIES
   settingslogic
   shoulda-matchers
   simple_form (~> 3.0.2)
+  slim
   slim-rails
   therubyracer
   turbolinks
