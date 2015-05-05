@@ -1,0 +1,8 @@
+.form-inputs
+  = f.input :name, label: "文人名稱", as: :string
+  = f.input :location_id, label: "出生地", as: :select, collection: collection_for_loaction_name_with_id, input_html: { class: :chosen, mutiple: false }
+  = f.input :description, label: "生平敘述", as: :text, input_html: { rows: 15}
+
+.form-actions style="text-align:center"
+  = f.submit value: "送出", class: "btn btn-primary"
+  = link_to "取消", admin_artists_path, class: "btn"
