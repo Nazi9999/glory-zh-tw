@@ -70,7 +70,6 @@ gem 'carrierwave-meta', '~> 0.0.5'
 gem 'fog', '~> 1.25.0'
 gem 'jquery-ui-rails', '~> 4.0.3'
 gem 'chosen-rails', '~> 0.9.15'
-gem 'therubyracer', :platforms => :ruby
 
 gem 'kaminari'
 gem 'whenever'
@@ -92,3 +91,7 @@ gem 'slim-rails'
 gem 'annotate', '>=2.6.0'
 gem 'slim'
 gem 'font-awesome-rails'
+gem 'rails-i18n', '~> 4.0.0'
+gem 'active_model_serializers'
+# Embed the V8 JavaScript interpreter into Ruby
+gem 'therubyracer', '~> 0.12.1'

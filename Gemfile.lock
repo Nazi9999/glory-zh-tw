@@ -25,6 +25,8 @@ GEM
       activesupport (= 4.1.9)
       builder (~> 3.1)
       erubis (~> 2.7.0)
+    active_model_serializers (0.9.3)
+      activemodel (>= 3.2)
     activemodel (4.1.9)
       activesupport (= 4.1.9)
       builder (~> 3.1)
@@ -243,6 +245,9 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.9)
       sprockets-rails (~> 2.0)
+    rails-i18n (4.0.4)
+      i18n (~> 0.6)
+      railties (~> 4.0)
     railties (4.1.9)
       actionpack (= 4.1.9)
       activesupport (= 4.1.9)
@@ -354,6 +359,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers
   anjlab-bootstrap-rails (>= 2.3)
   annotate (>= 2.6.0)
   aws-sdk
@@ -387,6 +393,7 @@ DEPENDENCIES
   nested_form
   paper_trail (~> 3.0.6)
   rails (= 4.1.9)
+  rails-i18n (~> 4.0.0)
   ransack
   rspec
   rspec-rails
@@ -397,7 +404,7 @@ DEPENDENCIES
   simple_form (~> 3.0.2)
   slim
   slim-rails
-  therubyracer
+  therubyracer (~> 0.12.1)
   turbolinks
   turn (~> 0.8.3)
   twitter-bootstrap-rails!
