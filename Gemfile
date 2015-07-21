@@ -95,3 +95,5 @@ gem 'rails-i18n', '~> 4.0.0'
 gem 'active_model_serializers'
 # Embed the V8 JavaScript interpreter into Ruby
 gem 'therubyracer', '~> 0.12.1'
+gem 'pre-commit', require: false
+gem 'rubocop'
