@@ -80,6 +80,8 @@ group :development, :test do
   gem "shoulda-matchers"
   gem "factory_girl_rails"
   gem 'turn', '~> 0.8.3', :require => false
+  gem 'rspec-given'
+  gem 'database_cleaner'
 end
 gem "connection_ninja", "~> 0.4.1"
 gem "less-rails"
