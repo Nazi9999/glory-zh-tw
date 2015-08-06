@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.9'
 
-
 gem 'mysql2'
 
 # Use SCSS for stylesheets
@@ -55,12 +54,16 @@ group :development do
   gem 'capistrano-rvm'
   gem 'capistrano-precompile-on-local'
   gem 'capistrano-rails-tail-log'
+
+  gem 'annotate', '>=2.6.0'
+  gem 'pre-commit', require: false
+  gem 'rubocop'
 end
 gem 'paper_trail', '~> 3.0.6'
 gem 'differ', '~> 0.1.2'
 gem 'simple_form', '~> 3.0.2'
 gem 'nested_form'
-gem 'anjlab-bootstrap-rails', '>= 2.3', :require => 'bootstrap-rails'
+gem 'anjlab-bootstrap-rails', '>= 2.3', require: 'bootstrap-rails'
 gem 'crummy', '~> 1.8.0'
 gem 'settingslogic'
 gem 'aws-sdk'
@@ -75,27 +78,25 @@ gem 'kaminari'
 gem 'whenever'
 gem 'devise', '~> 3.2.4'
 group :development, :test do
-  gem "rspec"
-  gem "rspec-rails"
-  gem "shoulda-matchers"
-  gem "factory_girl_rails"
-  gem 'turn', '~> 0.8.3', :require => false
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
+  gem 'turn', '~> 0.8.3', require: false
   gem 'rspec-given'
   gem 'database_cleaner'
+  gem 'vcr'
 end
-gem "connection_ninja", "~> 0.4.1"
-gem "less-rails"
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'connection_ninja', '~> 0.4.1'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails', git: 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'minitest', '~> 5.6.1'
 gem 'haml'
 gem 'ransack'
 gem 'slim-rails'
-gem 'annotate', '>=2.6.0'
 gem 'slim'
 gem 'font-awesome-rails'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'active_model_serializers'
 # Embed the V8 JavaScript interpreter into Ruby
 gem 'therubyracer', '~> 0.12.1'
-gem 'pre-commit', require: false
-gem 'rubocop'
