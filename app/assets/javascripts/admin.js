@@ -25,6 +25,8 @@
 //= require twitter/bootstrap
 //= require unicorn
 
+//= require ckeditor/init
+
 //= require_self
 
 $(document).ready(function() {

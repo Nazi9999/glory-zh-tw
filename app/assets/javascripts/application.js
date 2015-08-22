@@ -24,6 +24,7 @@
 //= require twitter/bootstrap
 //= require unicorn
 
+
 //= require_self
 
 $(document).ready(function() {
