@@ -16,7 +16,8 @@ unless Rails.env.development?
     env = "\001\e[0;33m\002#{Rails.env.upcase}\001\e[0m\002" # 黃色 的 env 名稱
   end
 
-    # 替換 pry prompt 的方法在 https://github.com/pry/pry/wiki/Customization-and-configuration#Config_prompt 有教學
+    # 替換 pry prompt 的方法在
+    # https://github.com/pry/pry/wiki/Customization-and-configuration#Config_prompt有教學
   Pry.config.prompt = [
     proc { |*a| "#{env} #{old_prompt.first.call(*a)}"  },
     proc { |*a| "#{env} #{old_prompt.second.call(*a)}" }
