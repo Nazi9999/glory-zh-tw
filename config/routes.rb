@@ -1,4 +1,5 @@
 TraditionalChineseWebsite::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
   namespace :admin do
     root :to => "base#index"
