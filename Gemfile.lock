@@ -96,6 +96,9 @@ GEM
       railties (>= 3.0)
       sass-rails (>= 3.2)
     chronic (0.10.2)
+    ckeditor (4.0.11)
+      mime-types
+      orm_adapter (~> 0.5.0)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -421,6 +424,7 @@ DEPENDENCIES
   carrierwave (~> 0.10.0)
   carrierwave-meta (~> 0.0.5)
   chosen-rails (~> 0.9.15)
+  ckeditor
   coffee-rails (~> 4.0.0)
   connection_ninja (~> 0.4.1)
   crummy (~> 1.8.0)
