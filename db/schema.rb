@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150823003950) do
+ActiveRecord::Schema.define(version: 20150823032939) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -32,10 +32,13 @@ ActiveRecord::Schema.define(version: 20150823003950) do
     t.integer  "height"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "owner_type"
+    t.integer  "owner_id"
   end
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+  add_index "ckeditor_assets", ["owner_type", "owner_id"], name: "index_ckeditor_assets_on_owner_type_and_owner_id", using: :btree
 
   create_table "creations", force: true do |t|
     t.string   "name"
