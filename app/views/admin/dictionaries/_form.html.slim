@@ -7,7 +7,8 @@
   = f.input :six_id, label: "六書字", as: :select, collection: collection_for_six_words, input_html: { class: :chosen, mutiple: false}, include_blank: true
   = f.input :six_cat_id, label: "六書分類", as: :select, collection: collection_for_six_category, input_html: { class: :chosen, mutiple: false }
   = f.input :component, label: "部首", as: :string
-  = f.input :meaning, label: "字義", as: :ckeditor, input_html: { rows: 15}
+  = f.input :meaning, label: "字義", input_html: { rows: 15, data: {ckeditor_content_editor: true, upload_url: upload_url_for(@dictionary) } }
+
   = f.input :term, label: "造詞例句", as: :text, input_html: { rows: 15}
   .control-group
     .span5

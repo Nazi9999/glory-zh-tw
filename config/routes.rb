@@ -17,5 +17,7 @@ TraditionalChineseWebsite::Application.routes.draw do
     resources :options do
       get :foo, on: :collection
     end
+    resources :pictures, only: %w(index create destroy)
   end
+  resources :pictures, only: %w(index create destroy)
 end

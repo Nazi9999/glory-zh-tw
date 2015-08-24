@@ -55,4 +55,12 @@ module ApplicationHelper
     user.is_super_user ? "是" : "否"
   end
 
+  def upload_url_for(resource)
+    if resource.new_record?
+      admin_pictures_path
+    else
+      admin_pictures_path(owner_type: resource.class, owner_id: resource.id)
+    end    
+  end
+
 end

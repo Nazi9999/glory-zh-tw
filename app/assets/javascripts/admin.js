@@ -26,6 +26,7 @@
 //= require unicorn
 
 //= require ckeditor/init
+//= require ckeditor_support
 
 //= require_self
 
