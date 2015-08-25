@@ -83,9 +83,9 @@ $(document).ready(function() {
   // });
   tinyMCE.init({
     selector: 'textarea.tinymce',
-    plugins: ["advlist autolink lists link image charmap print preview hr anchor pagebreak", "searchreplace wordcount visualblocks visualchars code fullscreen", "insertdatetime media nonbreaking save table contextmenu directionality", "emoticons template paste textcolor colorpicker textpattern"],
-    toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-    toolbar2: "print preview media | forecolor backcolor emoticons",
+    plugins: ["advlist autolink lists link image charmap print preview hr anchor pagebreak", "searchreplace wordcount visualblocks visualchars code fullscreen", "insertdatetime media nonbreaking save table contextmenu directionality", "emoticons template paste textcolor colorpicker textpattern uploadimage"],
+    toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent",
+    toolbar2: "print preview media | forecolor backcolor emoticons | link image uploadimage",
     image_advtab: true,
     templates: [
       {
@@ -95,7 +95,10 @@ $(document).ready(function() {
         title: "Test template 2",
         content: "Test 2"
       }
-    ]
+    ],
+    image_advtab: true,
+    uploadimage_form_url: '/admin/tinymce_assets',
+    convert_urls: false
   });
     
 });
