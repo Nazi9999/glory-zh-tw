@@ -379,6 +379,9 @@ GEM
     tilt (1.4.1)
     tinymce-rails (4.2.4)
       railties (>= 3.1.1)
+    tinymce-rails-imageupload (4.0.16.beta)
+      railties (>= 3.2, < 5)
+      tinymce-rails (~> 4.0)
     trollop (2.0)
     turbolinks (2.2.2)
       coffee-rails
@@ -467,6 +470,7 @@ DEPENDENCIES
   slim-rails
   therubyracer (~> 0.12.1)
   tinymce-rails
+  tinymce-rails-imageupload (~> 4.0.0.beta)
   turbolinks
   turn (~> 0.8.3)
   twitter-bootstrap-rails!
