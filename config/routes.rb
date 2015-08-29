@@ -16,5 +16,6 @@ TraditionalChineseWebsite::Application.routes.draw do
     resources :options do
       get :foo, on: :collection
     end
+    post '/tinymce_assets' => 'tinymce_assets#create'
   end
 end

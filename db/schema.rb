@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141004071708) do
+ActiveRecord::Schema.define(version: 20150825182216) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -20,6 +20,25 @@ ActiveRecord::Schema.define(version: 20141004071708) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "ckeditor_assets", force: true do |t|
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "owner_type"
+    t.integer  "owner_id"
+  end
+
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+  add_index "ckeditor_assets", ["owner_type", "owner_id"], name: "index_ckeditor_assets_on_owner_type_and_owner_id", using: :btree
 
   create_table "creations", force: true do |t|
     t.string   "name"
@@ -138,6 +157,12 @@ ActiveRecord::Schema.define(version: 20141004071708) do
     t.string   "meaning"
     t.string   "image"
     t.string   "avatar"
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tinymce_pictures", force: true do |t|
     t.string   "file"
     t.datetime "created_at"
     t.datetime "updated_at"
