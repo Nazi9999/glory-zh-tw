@@ -42,6 +42,7 @@ group :development do
   gem 'connection_ninja', '~> 0.4.1'
 end
 
+gem 'pg'
 # for test
 group :development, :test do
   gem 'rspec'
